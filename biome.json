@@ -15,6 +15,7 @@
     "indentStyle": "space",
     "lineEnding": "lf",
     "lineWidth": 100,
+    "attributePosition": "auto",
     "formatWithErrors": true
   },
   "json": {
@@ -28,7 +29,16 @@
   },
   "javascript": {
     "formatter": {
-      "enabled": true
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "all",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "enabled": true,
+      "quoteStyle": "single",
+      "attributePosition": "auto"
     },
     "linter": {
       "enabled": true
