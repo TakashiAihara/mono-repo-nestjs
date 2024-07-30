@@ -10,7 +10,7 @@
     "analyze": "pnpm analyze:check",
     "analyze:check": "biome check --verbose",
     "analyze:check:unsafe": "pnpm analyze:check --unsafe",
-    "analyze:check:staged": "pnpm analyze:check --staged",
+    "analyze:check:staged": "pnpm analyze:check --staged --no-errors-on-unmatched",
     "analyze:check:ci": "pnpm analyze:check --log-level=debug --reporter=github",
     "analyze:write": "biome check --write",
     "format:check": "biome format",
