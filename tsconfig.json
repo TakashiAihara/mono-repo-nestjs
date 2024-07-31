@@ -4,6 +4,7 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "target": "ESNext",
+    "types": ["vitest/globals"],
     "outDir": "./dist",
     "baseUrl": "./",
     "declaration": true,

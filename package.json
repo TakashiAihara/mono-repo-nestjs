@@ -7,7 +7,6 @@
   "type": "module",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build --builder swc",
     "analyze": "pnpm analyze:check",
     "analyze:check": "biome check --verbose",
     "analyze:check:unsafe": "pnpm analyze:check --unsafe",
@@ -18,15 +17,22 @@
     "format:write": "biome format --write",
     "lint:check": "biome lint",
     "lint:write": "biome lint --write",
-    "start": "nest start --builder swc",
+    "build": "nest --builder swc build",
+    "start": "nest --builder swc start",
     "start:dev": "pnpm start --watch",
     "start:debug": "pnpm start:dev --debug --type-check",
     "start:prod": "node dist/main",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:cov": "jest --coverage",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "test": "pnpm test:base",
+    "test:base": "vitest",
+    "test:benchmark": "pnpm test:base --mode benchmark",
+    "test:watch": "pnpm test:base --watch",
+    "test:snapshot:update": "pnpm test:base --update --ui",
+    "test:cov": "pnpm test:base --coverage",
+    "test:debug": "pnpm test:base --inspect-brk --no-file-parallelism",
+    "test:debug:single-thread": "pnpm test:base --inspect-brk --pool threads --poolOptions.threads.singleThread",
+    "test:debug:single-fork": "pnpm test:base --inspect-brk --pool forks --poolOptions.forks.singleFork",
+    "test:integration": "pnpm test:base -c vitest.config.integration.ts",
+    "test:all": "pnpm test && pnpm test:integration",
     "prepare": "husky"
   },
   "dependencies": {
@@ -45,29 +51,16 @@
     "@swc/core": "^1.7.3",
     "@tsconfig/strictest": "^2.0.5",
     "@types/express": "^4.17.21",
-    "@types/jest": "^29.5.12",
     "@types/node": "^22.0.0",
     "@types/supertest": "^6.0.2",
+    "@vitest/coverage-v8": "^2.0.4",
     "husky": "^9.1.4",
-    "jest": "^29.7.0",
     "source-map-support": "^0.5.21",
     "supertest": "^7.0.0",
-    "ts-jest": "^29.2.3",
-    "ts-loader": "^9.5.1",
-    "ts-node": "^10.9.2",
-    "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.5.4"
-  },
-  "jest": {
-    "moduleFileExtensions": ["js", "json", "ts"],
-    "rootDir": "src",
-    "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "collectCoverageFrom": ["**/*.(t|j)s"],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "tsx": "^4.16.3",
+    "typescript": "^5.5.4",
+    "unplugin-swc": "^1.5.1",
+    "vitest": "^2.0.4"
   },
   "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a"
 }
