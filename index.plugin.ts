@@ -3,14 +3,19 @@ import { JsPlugin } from '@farmfe/core';
 export default function NestPlugin(): JsPlugin {
   return {
     name: 'NestPlugin',
+
     config: (config) => {
       const mode = config.compilation.mode ?? process.env.NODE_ENV ?? 'development';
       const isDev = mode === 'development';
       const compilation = config.compilation ?? {};
 
       const script = compilation.script ?? { plugins: [] };
+
       return {
         compilation: {
+          presetEnv: compilation.presetEnv ?? !isDev,
+          minify: compilation.minify ?? !isDev,
+
           script: {
             plugins: script.plugins,
             target: script.target ?? 'es2019',
@@ -30,8 +35,7 @@ export default function NestPlugin(): JsPlugin {
               excludes: ['node_modules/**/*'],
             },
           },
-          presetEnv: compilation.presetEnv ?? !isDev,
-          minify: compilation.minify ?? !isDev,
+
           output: {
             format: compilation.output?.format ?? 'esm',
             targetEnv: compilation.output?.targetEnv ?? 'node',
