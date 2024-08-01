@@ -4,16 +4,21 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "target": "ESNext",
-    "types": ["vitest/globals"],
+
     "outDir": "./dist",
     "baseUrl": "./",
+
+    "types": ["vitest/globals"],
+
     "declaration": true,
     "removeComments": true,
+    "sourceMap": true,
+
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "incremental": true,
-    "forceConsistentCasingInFileNames": true
-  }
+    "incremental": true
+  },
+  "exclude": ["node_modules", "dist", "coverage"]
 }
