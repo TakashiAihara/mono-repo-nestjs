@@ -20,6 +20,7 @@
     "format:write": "biome format --write",
     "lint:check": "biome lint",
     "lint:write": "biome lint --write",
+    "type:check": "tsc --noEmit",
     "prepare": "husky",
     "start": "nest --builder swc start",
     "start:debug": "pnpm start:dev --debug --type-check",
