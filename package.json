@@ -65,12 +65,16 @@
     "unplugin-swc": "^1.5.1",
     "vitest": "^2.0.4"
   },
-  "packageManager": "pnpm@9.4.0",
+  "packageManager": "pnpm@9.6.0",
   "engines": {
     "node": ">=22.5.0",
-    "vscode": "^1.91.0"
+    "vscode": "^1.91.0",
+    "yarn": "DO NOT USE YARN",
+    "npm": "DO NOT USE NPM",
+    "pnpm": "9.6.0"
   },
   "volta": {
-    "node": "22.5.1"
+    "node": "22.5.1",
+    "pnpm": "9.6.0"
   }
 }
