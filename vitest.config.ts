@@ -6,6 +6,9 @@ export default defineConfig({
     globals: true,
     root: './',
     watch: false,
+    alias: {
+      '@': '/src',
+    },
   },
   plugins: [
     swc.vite({
