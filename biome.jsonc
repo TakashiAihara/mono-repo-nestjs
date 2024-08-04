@@ -49,6 +49,9 @@
     "linter": {
       "enabled": true
     },
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
+    },
     "jsxRuntime": "transparent"
   },
   "vcs": {

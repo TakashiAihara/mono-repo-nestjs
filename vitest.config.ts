@@ -8,6 +8,10 @@ export default defineConfig({
     watch: false,
     alias: {
       '@': '/src',
+      '@domain': '/src/domain',
+      '@application': '/src/application',
+      '@presentation': '/src/presentation',
+      '@infrastructure': '/src/infrastructure',
     },
   },
   plugins: [
