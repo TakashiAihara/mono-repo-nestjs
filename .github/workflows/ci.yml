@@ -14,7 +14,7 @@ env:
   VOLTA_FEATURE_PNPM: 1
 
 jobs:
-  test:
+  unit-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,7 +25,20 @@ jobs:
       #   shell: bash
       #   run: cp .env.example .env
 
-      - run: pnpm test
+      - run: pnpm test:unit
+
+  integration-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: volta-cli/action@v4
+      - run: pnpm i --frozen-lockfile
+
+      # - name: Copy env
+      #   shell: bash
+      #   run: cp .env.example .env
+
+      - run: pnpm test:integration
 
   analyze:
     runs-on: ubuntu-latest
@@ -43,10 +56,18 @@ jobs:
       - run: pnpm i --frozen-lockfile
       - run: pnpm type:check
 
-  build:
+  build-swc:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: volta-cli/action@v4
       - run: pnpm i --frozen-lockfile
-      - run: pnpm build
+      - run: pnpm build:swc
+
+  build-type:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: volta-cli/action@v4
+      - run: pnpm i --frozen-lockfile
+      - run: pnpm build:type
