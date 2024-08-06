@@ -1,10 +1,6 @@
 {
-  "extends": "@tsconfig/strictest/tsconfig.json",
+  "extends": "@tools/typescript/tsconfig.json",
   "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "target": "ESNext",
-
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
@@ -13,19 +9,7 @@
       "@application/*": ["src/application/*"],
       "@presentation/*": ["src/presentation/*"],
       "@infrastructure/*": ["src/infrastructure/*"]
-    },
-
-    "types": ["vitest/globals"],
-
-    "declaration": true,
-    "removeComments": true,
-    "sourceMap": true,
-
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-
-    "allowSyntheticDefaultImports": true,
-    "incremental": true
+    }
   },
   "exclude": ["node_modules", "dist", "coverage"]
 }
