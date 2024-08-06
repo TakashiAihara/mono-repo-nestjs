@@ -3,5 +3,12 @@
   "biome.rename": true,
   "biome.searchInPath": true,
   "editor.defaultFormatter": "biomejs.biome",
-  "cSpell.words": ["biomejs", "nestjs", "swcrc", "unplugin"]
+  "cSpell.words": [
+    "Aihara",
+    "biomejs",
+    "nestjs",
+    "swcrc",
+    "Takashi",
+    "unplugin"
+  ]
 }

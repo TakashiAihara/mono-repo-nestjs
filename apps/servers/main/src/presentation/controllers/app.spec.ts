@@ -1,7 +1,7 @@
-import { GreetingService } from '@/application/services/greeting';
-import { IGreetingService } from '@/application/services/interfaces/greeting';
-import { IGreetingRepository } from '@/domain/interfaces/repositories/greeting';
-import { GreetingRepository } from '@/infrastructure/repositories/greeting';
+import { GreetingService } from '@application/services/greeting';
+import { IGreetingService } from '@application/services/interfaces/greeting';
+import { IGreetingRepository } from '@domain/interfaces/repositories/greeting';
+import { GreetingRepository } from '@infrastructure/repositories/greeting';
 import { Test, type TestingModule } from '@nestjs/testing';
 import { AppController } from './app';
 

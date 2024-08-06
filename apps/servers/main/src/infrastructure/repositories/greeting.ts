@@ -1,5 +1,5 @@
-import { IGreetingRepository } from '@/domain/interfaces/repositories/greeting';
-import { Greeting } from '@/domain/models/greeting';
+import type { IGreetingRepository } from '@domain/interfaces/repositories/greeting';
+import { Greeting } from '@domain/models/greeting';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()

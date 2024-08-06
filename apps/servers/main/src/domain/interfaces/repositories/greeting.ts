@@ -1,4 +1,4 @@
-import { Greeting } from '@/domain/models/greeting';
+import type { Greeting } from '@domain/models/greeting';
 
 export interface IGreetingRepository {
   getGreeting(): Greeting;

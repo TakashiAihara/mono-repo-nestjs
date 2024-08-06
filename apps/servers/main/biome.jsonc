@@ -1,0 +1,11 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "extends": ["../../../biome.jsonc"],
+  "linter": {
+    "rules": {
+      "style": {
+        "useImportType": "off" // for NestJS Services DI import
+      }
+    }
+  }
+}
