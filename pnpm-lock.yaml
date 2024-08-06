@@ -6,7 +6,11 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    devDependencies:
+      '@tools/biome':
+        specifier: workspace:^
+        version: link:tools/biome
 
   apps/servers/main:
     dependencies:
@@ -47,6 +51,9 @@ importers:
       '@swc/core':
         specifier: ^1.7.3
         version: 1.7.6
+      '@tools/biome':
+        specifier: workspace:^
+        version: link:../../../tools/biome
       '@types/express':
         specifier: ^4.17.21
         version: 4.17.21
@@ -89,6 +96,8 @@ importers:
       vitest:
         specifier: ^2.0.4
         version: 2.0.5(@types/node@22.1.0)(terser@5.31.3)
+
+  tools/biome: {}
 
   tools/typescript:
     devDependencies:
