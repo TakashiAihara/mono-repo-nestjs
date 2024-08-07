@@ -26,6 +26,9 @@ importers:
       '@tools/typescript':
         specifier: workspace:^
         version: link:../../../tools/typescript
+      '@tools/vitest':
+        specifier: workspace:^
+        version: link:../../../tools/vitest
       reflect-metadata:
         specifier: ^0.2.2
         version: 0.2.2
@@ -104,6 +107,21 @@ importers:
       '@tsconfig/strictest':
         specifier: ^2.0.5
         version: 2.0.5
+
+  tools/vitest:
+    devDependencies:
+      '@biomejs/biome':
+        specifier: ^1.8.3
+        version: 1.8.3
+      '@tools/biome':
+        specifier: workspace:^
+        version: link:../biome
+      unplugin-swc:
+        specifier: ^1.5.1
+        version: 1.5.1(@swc/core@1.7.6)(rollup@4.20.0)
+      vitest:
+        specifier: ^2.0.4
+        version: 2.0.5(@types/node@22.1.0)(terser@5.31.3)
 
 packages:
 
