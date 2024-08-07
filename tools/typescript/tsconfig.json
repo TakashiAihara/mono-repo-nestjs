@@ -5,16 +5,6 @@
     "moduleResolution": "Bundler",
     "target": "ESNext",
 
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["./src/*"],
-      "@domain/*": ["./src/domain/*"],
-      "@application/*": ["./src/application/*"],
-      "@presentation/*": ["./src/presentation/*"],
-      "@infrastructure/*": ["./src/infrastructure/*"]
-    },
-
     "types": ["vitest/globals"],
 
     "declaration": true,
@@ -26,6 +16,5 @@
 
     "allowSyntheticDefaultImports": true,
     "incremental": true
-  },
-  "exclude": ["node_modules", "dist", "coverage"]
+  }
 }

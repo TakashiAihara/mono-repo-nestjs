@@ -1,22 +1,16 @@
 import swc from 'unplugin-swc';
-import { defineConfig } from 'vitest/config';
+import { defineConfig, mergeConfig } from 'vitest/config';
 
-export default defineConfig({
+export const baseConfig = defineConfig({
   test: {
     globals: true,
     root: './',
     watch: false,
-    alias: {
-      '@': '/src',
-      '@domain': '/src/domain',
-      '@application': '/src/application',
-      '@presentation': '/src/presentation',
-      '@infrastructure': '/src/infrastructure',
-    },
   },
   plugins: [
     swc.vite({
       configFile: '.test.swcrc',
+      isModule: true,
       jsc: {
         parser: {
           syntax: 'typescript',
@@ -38,3 +32,18 @@ export default defineConfig({
     }),
   ],
 });
+
+export const integrationConfig = mergeConfig(
+  baseConfig,
+  defineConfig({
+    test: {
+      include: ['test/**/*.integration-test.ts'],
+      globals: true,
+      environment: 'node',
+      testTimeout: 20000,
+      env: {
+        NODE_ENV: 'test',
+      },
+    },
+  }),
+);

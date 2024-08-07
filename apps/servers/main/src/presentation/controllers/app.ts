@@ -1,4 +1,4 @@
-import { IGreetingService } from '@/application/services/interfaces/greeting';
+import { IGreetingService } from '@application/services/interfaces/greeting';
 import { Controller, Get, Inject } from '@nestjs/common';
 
 @Controller()

@@ -1,7 +1,7 @@
-import { IGreetingRepository } from '@/domain/interfaces/repositories/greeting';
-import { Greeting } from '@/domain/models/greeting';
+import { IGreetingRepository } from '@domain/interfaces/repositories/greeting';
+import type { Greeting } from '@domain/models/greeting';
 import { Inject, Injectable } from '@nestjs/common';
-import { IGreetingService } from './interfaces/greeting';
+import type { IGreetingService } from './interfaces/greeting';
 
 @Injectable()
 export class GreetingService implements IGreetingService {
